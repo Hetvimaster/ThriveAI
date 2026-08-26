@@ -73,19 +73,13 @@ A `.env.example` with placeholder values (no real keys) is recommended so collab
 ### Running the App
 
 ```bash
-streamlit run app.py   # [replace with your actual entry point, e.g. main.py]
+source .venv/bin/activate
+pip install -r requirements.txt
+streamlit run MCP/chatUI2.py
+uvicorn MCP.fastAPI:app --reload --port 8000
 ```
 
 ## Known Issues / In Progress
 
-- Narrowing project scope before adding further features (see roadmap below).
 - Recently resolved: system prompt not being injected into the agent, MCP client being recreated on every request instead of reused, and database setup running redundantly per message.
 
-## Roadmap
-
-- [ ] Ship the current core pipeline incrementally before expanding scope
-- [ ] [Add next planned feature]
-
-## License
-
-[Add your license, e.g. MIT]
